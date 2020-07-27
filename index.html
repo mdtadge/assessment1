@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sport Event</title>
+</head>
+<body>
+  <div class="head">
+    <h1>Sports Events</h1>
+  </div>
+ <div class="header">
+<button onclick="myfun()">Details</button>
+<button onclick="myfun1()">Register</button>
+<button onclick="myfun2()">Registrations</button>   
+ </div> 
+
+<div class="details" id="details">
+  
+  
+  <p>
+  Cricket: 
+  <center>
+  <table>
+    <th>Num</th>
+    <th>Place</th>
+    <th>Date</th>
+    <tr>
+      <td>1.</td>
+      <td>Pune</td>
+      <td>1/08/2020</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Dhule</td>
+      <td>2/08/2020</td>
+    </tr>
+    </table>
+  </center>  
+  </p>  <br>
+  <p>
+    Football: 
+  <center>
+  <table>
+    <th>Num</th>
+    <th>Place</th>
+    <th>Date</th>
+    <tr>
+      <td>1.</td>
+      <td>Dhule</td>
+      <td>3/08/2020</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Mumbai</td>
+      <td>4/08/2020</td>
+    </tr>
+    </table>
+  </center>  
+  </p><br>
+  <p>
+    Chess: 
+  <center>
+  <table>
+    <th>Num</th>
+    <th>Place</th>
+    <th>Date</th>
+    <tr>
+      <td>1.</td>
+      <td>Akola</td>
+      <td>8/08/2020</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Beed</td>
+      <td>9/08/2020</td>
+    </tr>
+    </table>
+  </center>  
+  </p><br>
+  <p>
+    Carrom: 
+  <center>
+  <table>
+    <th>Num</th>
+    <th>Place</th>
+    <th>Date</th>
+    <tr>
+      <td>1.</td>
+      <td>Nashik</td>
+      <td>10/08/2020</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td>Jalgoan</td>
+      <td>11/08/2020</td>
+    </tr>
+    </table>
+  </center>  
+  </p>
+  
+</div>
+<div id="register" class="register" hidden>
+ Name: <input type="text" name="" id="name" placeholder="Enter Name"> <br><br>
+ Sport: <input type="text" name="" id="sport" placeholder="Enter Sport"> <br><br>
+ <button class="btn" onclick="adddetails()">Submit</button>
+
+</div>
+<div class="r">
+  <div id="registrations" hidden>
+    
+  </div>
+  <div id="registrations1" hidden>
+    
+  </div>  
+</div>
+
+</body>
+<script>
+  var names = ["Mayur"];
+  var sports = ["Chess"];
+  
+  function adddetails(){
+    var x = document.getElementById("name").value;
+    var y = document.getElementById("sport").value;
+    names.push(x);
+    sports.push(y);
+    
+    
+  }
+  function myfun(){
+    var z = document.getElementById("registrations");
+    var z1 = document.getElementById("registrations1");
+    var y = document.getElementById("register");
+var x = document.getElementById("details");
+
+  if (x.style.display === "none") {
+    z.style.display = "none";
+    z1.style.display = "none";
+    y.style.display = "none";
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  }
+function myfun1(){
+  var z = document.getElementById("registrations");
+  var z1 = document.getElementById("registrations1");
+  var y = document.getElementById("register");
+  var x = document.getElementById("details");
+  if (y.style.display === "none") {
+    x.style.display = "none";
+    z.style.display = "none";
+    z1.style.display = "none";
+    y.style.display = "block";
+  } else {
+    y.style.display = "none";
+  }
+}
+
+function myfun2(){
+  var z = document.getElementById("registrations");
+  var z1 = document.getElementById("registrations1");
+  var y = document.getElementById("register");
+  var x = document.getElementById("details");
+  if (z.style.display === "none") {
+    x.style.display = "none";
+    y.style.display = "none";
+    z.style.display = "block";
+    z1.style.display = "block";
+    document.getElementById("registrations").innerHTML = "Names: "+names;
+
+     document.getElementById("registrations1").innerHTML = "Sports: "+sports;
+    
+
+
+    
+  } else {
+    z.style.display = "none";
+    z1.style.display = "none";
+  }
+}
+</script>
+<style>
+  *{
+    padding: 0px;
+    margin: 0px;
+  }
+  body{
+    background-color: black;
+    color: white;
+  }
+  .header{
+    background-color: red;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+  }
+  button{
+    border: none;
+    background: transparent;
+    color: white;
+    padding-right: 20px;
+    cursor: pointer;
+  }
+  .btn{
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+    padding: 5px;
+  }
+  .details{
+    text-align: center;
+
+  }
+  
+  }
+   table{
+    padding: 20px;
+
+
+  }
+  th{
+    padding: 5px;
+  }
+  td{
+    padding: 5px;
+  }
+  .register{
+    margin-top: 10%;
+    text-align: center;
+  }
+  .r{
+   margin-top: 10%;
+    text-align: center; 
+  }
+  .head{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 5px;
+  }
+</style>
+</html>
